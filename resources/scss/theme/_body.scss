@@ -1,0 +1,15 @@
+body, html {
+  height: 100%;
+}
+
+.content {
+  flex: 1 auto;
+  background-color: $bg-content;
+}
+
+footer {
+  border-top: 1px $gray-500 solid;
+  background-color: $light;
+  padding-top: $font-size-base * .5;
+  padding-bottom: $font-size-base * .5;
+}

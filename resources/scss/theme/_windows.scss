@@ -1,0 +1,13 @@
+.windows-title {
+  padding-top: $font-size-sm * .5;
+  padding-bottom: $font-size-sm * .5;
+  margin-left: $font-size-base;
+}
+
+.windows-action {
+  display: flex;
+}
+
+.windows-menu {
+  height: $windows-height-menu;
+}
