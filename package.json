@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npx mix --development",
+        "watch": "npx mix watch --hot",
+        "build": "npx mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.27",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.54.0",
+        "sass-loader": "^12.1.0"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.5",
+        "bootstrap": "^5.2.0",
+        "feather-icons": "^4.29.0",
+        "jquery": "^3.6.0",
+        "laravel-mix": "^6.0.49"
+    }
+}

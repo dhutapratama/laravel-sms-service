@@ -1,0 +1,31 @@
+.table-windows-container {
+  background-color: $white;
+}
+
+.table-windows {
+  margin-bottom: 0;
+
+  tr>td {
+    border: 1px solid $gray-300;
+
+    &:first-child {
+      border-left-color: $gray-600;
+    }
+
+    &:last-child {
+      border-right-color: $gray-600;
+    }
+  }
+
+  tr:last-child>td {
+    border-bottom: 1px solid $gray-600;
+  }
+
+  &>thead>tr>td {
+    background-color: $light;
+    border-color: $gray-600;
+    box-shadow: $box-shadow-inset;
+    border-width: 1px;
+  }
+
+}

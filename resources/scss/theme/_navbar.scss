@@ -1,0 +1,18 @@
+.navbar-windows {
+  padding: 0;
+}
+
+.navbar-toolbar {
+  padding-left: $font-size-base;
+  padding-right: $font-size-base;
+  padding-top: $font-size-base * .4;
+  padding-bottom: $font-size-base * .4;
+
+  background-color: $light;
+  border-top: 1px $gray-500 solid;
+  border-bottom: 1px $gray-500 solid;
+}
+
+.toolbar {
+  display: flex;
+}

@@ -1,0 +1,77 @@
+$blue:    #4d4fcc;
+$primary: $blue;
+$light:   #f0f0f0;
+
+$font-size-base:              .8rem;
+$font-size-sm:                $font-size-base * .875;
+
+$spacer: 1rem;
+
+$navbar-padding-y:            $spacer * .2;
+$navbar-brand-font-size:      $font-size-base;
+$navbar-brand-padding-y:      0;
+
+$btn-box-shadow: 0;
+$form-label-margin-bottom:0;
+
+$input-btn-padding-y-sm:      .1rem;
+$input-btn-padding-x-sm:      .3rem;
+$input-btn-font-size-sm:      $font-size-sm;
+
+
+// scss-docs-start gray-color-variables
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+// scss-docs-end gray-color-variables
+
+$red:     #dc3545;
+$card-title-spacer-y: 0;
+$border-radius: 0;
+$border-color: $gray-600;
+
+// scss-docs-start box-shadow-variables
+$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+$box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+// scss-docs-end box-shadow-variables
+
+// Button
+$input-btn-focus-box-shadow: none;
+$input-focus-border-color: none;
+
+// Card
+$card-border-radius: 0;
+$card-border-color: $border-color;
+$card-cap-bg: $primary;
+$card-cap-color: $gray-200;
+$card-bg: $light;
+
+// Form control
+$input-border-radius: 0;
+$input-border-radius-sm: 0;
+$input-border-radius-lg: 0;
+
+// scss-docs-start input-btn-variables
+$input-btn-padding-y: .2rem !default;
+$input-btn-padding-x: .4rem !default;
+$input-btn-padding-y-sm: .2rem !default;
+$input-btn-padding-x-sm: .4rem !default;
+$input-btn-padding-y-lg: .4rem !default;
+$input-btn-padding-x-lg: .8rem !default;
+
+// Tables
+$table-cell-padding-y: 0;
+$table-cell-padding-x: .2rem;
+$table-cell-padding-y-sm: $table-cell-padding-y;
+$table-cell-padding-x-sm: $table-cell-padding-x;
+$table-border-color: $gray-400;

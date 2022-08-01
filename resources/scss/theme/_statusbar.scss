@@ -1,0 +1,12 @@
+.statusbar {
+  display: flex;
+  column-gap: $font-size-base;
+  div {
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid $gray-500;
+    border-top: 1px solid $gray-500;
+    padding-left: $font-size-base * .5;
+    padding-right: $font-size-base * .5;
+  }
+}

@@ -1,0 +1,21 @@
+.card-windows {
+  .card-header {
+    height: $windows-height-header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 $spacer * .25;
+
+    .card-title {
+      padding-left: $spacer * .25;
+    }
+  }
+
+  .card-menu {
+    background-color: $white;
+  }
+
+  .card-body {
+    padding: $spacer * .25;
+  }
+}
