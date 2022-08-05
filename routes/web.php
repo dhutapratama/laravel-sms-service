@@ -30,4 +30,6 @@ Route::middleware('auth')->group(function () {
 
   // Administrative area
   require __DIR__ . '/management/base.php';
+  require __DIR__ . '/sms/base.php';
+  require __DIR__ . '/device/base.php';
 });
