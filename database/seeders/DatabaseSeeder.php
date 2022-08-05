@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\Outbox;
+
 class DatabaseSeeder extends Seeder
 {
   /**
@@ -14,6 +16,8 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
+    //Outbox::factory(37)->create();
+
     $this->call([
       PermissionSeeder::class,
       RoleSeeder::class,
