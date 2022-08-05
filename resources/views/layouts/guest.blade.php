@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Laravel</title>
+  <title>{{ env('APP_NAME') }}</title>
   <link href="{{ asset('css/bundle.css') }}" rel="stylesheet">
   <link href="{{ asset('css/misp-theme.css') }}" rel="stylesheet">
 </head>
@@ -59,7 +59,7 @@
         </button>
       </div>
       <div class="toolbar">
-        <button class="btn btn-toolbar d-md-none collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="btn btn-toolbar d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
           <i data-feather="menu" class="icon icon-sm"></i>
         </button>
         <button class="btn btn-toolbar" type="button">

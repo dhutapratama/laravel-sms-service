@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Laravel</title>
+  <title>{{ env('APP_NAME') }}</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="{{ asset('css/bundle.css') }}" rel="stylesheet">
   <link href="{{ asset('css/misp-theme.css') }}" rel="stylesheet">
 </head>
@@ -17,7 +19,7 @@
         <div class="windows-title">
           <a href="#" class="navbar-brand d-flex align-items-center">
             <span data-feather="shopping-cart" class="icon-sm me-2"></span>
-            Mikrotik ISP v1.0.0
+            {{ env('APP_NAME') }} v1.0.0
           </a>
         </div>
         <div class="windows-action">
@@ -36,9 +38,8 @@
     <div class="navbar navbar-windows">
       <div class="d-flex flex-row">
         <div class="btn-group btn-group-menu" role="group" aria-label="Small button group">
-          <button type="button" class="btn btn-menu">Session</button>
-          <button type="button" class="btn btn-menu">Settings</button>
-          <button type="button" class="btn btn-menu">Dashboard</button>
+          <button type="button" class="btn btn-menu">Menu</button>
+          <button type="button" class="btn btn-menu">Device</button>
         </div>
       </div>
     </div>
@@ -59,10 +60,10 @@
         </button>
       </div>
       <div class="toolbar">
-        <button class="btn btn-toolbar d-md-none collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="btn btn-toolbar d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
           <i data-feather="menu" class="icon icon-sm"></i>
         </button>
-        <a href="{{ route("logout") }}" class="btn btn-toolbar" type="button">
+        <a href="{{ route('logout') }}" class="btn btn-toolbar" type="button">
           Logout
         </a>
       </div>
@@ -74,33 +75,33 @@
       <div class="d-flex">
         <ul class="nav flex-column flex-grow-1">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('dashboard') }}">
               <span data-feather="file" class="icon icon-md"></span>
-              Orders
+              Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart" class="icon icon-md"></span>
-              Products
+            <a class="nav-link" href="{{ route('sms.create') }}">
+              <span data-feather="file" class="icon icon-md"></span>
+              Create SMS
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users" class="icon icon-md"></span>
-              Customers
+            <a class="nav-link" href="{{ route('sms.outbox') }}">
+              <span data-feather="box" class="icon icon-md"></span>
+              Outbox
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2" class="icon icon-md"></span>
-              Reports
+            <a class="nav-link" href="{{ route('sms.sent') }}">
+              <span data-feather="truck" class="icon icon-md"></span>
+              Sent
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers" class="icon icon-md"></span>
-              Integrations
+            <a class="nav-link" href="{{ route('device') }}">
+              <span data-feather="smartphone" class="icon icon-md"></span>
+              Management
             </a>
           </li>
           <li class="nav-item">
