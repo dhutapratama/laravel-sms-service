@@ -10,14 +10,11 @@
   <link href="{{ asset('css/misp-theme.css') }}" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column">
-  <div class="d-flex flex-row flex-column-fluid">
-    <div class="content flex-column flex-row-fluid">
-      <main class="flex-column-fluid flex-grow-1 py-2">
-        {{ $slot }}
-      </main>
-    </div>
-  </div>
+<body class="d-flex content">
+  <main class="d-flex flex-column-fluid align-items-center justify-content-center py-2">
+    {{ $slot }}
+  </main>
+</div>
 
 
   <script async src="{{ asset('js/bundle.js') }}"></script>

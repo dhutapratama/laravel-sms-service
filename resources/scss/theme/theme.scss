@@ -1,6 +1,8 @@
 // Theme and Customizable sass.
 @import '../bootstrap5/variables';
+@import 'reboot';
 @import 'variable';
+@import 'mixin/mixin';
 @import 'body';
 @import 'dimension';
 @import 'flex';
@@ -10,5 +12,4 @@
 @import 'button';
 @import 'statusbar';
 @import 'table';
-
 @import 'card';

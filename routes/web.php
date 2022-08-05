@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Mikrotik\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Public
+require __DIR__ . '/auth.php';
+
+// Authenticated
+Route::middleware('auth')->group(function () {
+  Route::get('/', function () {
     return view('welcome');
-});
+  });
 
-require __DIR__.'/auth.php';
-
-Route::get('/dashboard', function () {
+  Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+  })->name('dashboard');
+
+  // Administrative area
+  require __DIR__ . '/management/base.php';
+});

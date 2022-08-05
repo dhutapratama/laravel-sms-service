@@ -1,36 +1,30 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<x-auth-layout>
+  <x-auth-card>
+    <x-slot name="title">Lupa Password</x-slot>
+    <form method="POST" class="p-2" action="{{ route('password.email') }}">
+      @csrf
+      <x-auth-session-status class="mb-4" :status="session('status')" />
+      <x-auth-validation-errors class="alert alert-danger p-2 mb-2" role="alert" :errors="$errors" />
+      <div class="mb-2">
+        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+      </div>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+      <div class="row g-2 align-items-center mb-2">
+        <div class="col-2 text-end">
+          <label for="email" class="form-label">Email:</label>
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        <div class="col-10">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{ old('email') }}" required autofocus />
+        </div>
+      </div>
+      <div class="row g-2 align-items-center">
+        <div class="col-2 text-end">
+          &nbsp;
+        </div>
+        <div class="col-10">
+          <button type="submit" class="btn btn-primary">{{ __('Email Password Reset Link') }}</button>
+        </div>
+      </div>
+    </form>
+  </x-auth-card>
+</x-auth-layout>

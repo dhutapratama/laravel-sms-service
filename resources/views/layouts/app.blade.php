@@ -62,9 +62,9 @@
         <button class="btn btn-toolbar d-md-none collapsed" type="button"  data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
           <i data-feather="menu" class="icon icon-sm"></i>
         </button>
-        <button class="btn btn-toolbar" type="button">
+        <a href="{{ route("logout") }}" class="btn btn-toolbar" type="button">
           Logout
-        </button>
+        </a>
       </div>
     </div>
   </header>
@@ -103,46 +103,30 @@
               Integrations
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('management.user') }}">
+              <span data-feather="users" class="icon icon-md"></span>
+              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('management.role') }}">
+              <span data-feather="users" class="icon icon-md"></span>
+              Roles
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('management.permission') }}">
+              <span data-feather="users" class="icon icon-md"></span>
+              Permissions
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
     <div class="content flex-column flex-row-fluid">
       <main class="flex-column-fluid flex-grow-1 py-2">
         {{ $slot }}
-        <section class="container">
-          <div class="row">
-            <div class="col-6">
-              <div class="card">
-                <div class="card-header">
-                  <div class="card-title">MY TITLA</div>
-                </div>
-                <div class="card-body">
-                  asdasdasdasd
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="card">
-                <div class="card-header">
-                  <div class="card-title">MY TITLA</div>
-                </div>
-                <div class="card-body">
-                  asdasdasdasd
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card">
-                <div class="card-header">
-                  <div class="card-title">MY TITLA</div>
-                </div>
-                <div class="card-body">
-                  asdasdasdasd
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   </div>
