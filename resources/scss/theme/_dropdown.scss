@@ -1,0 +1,25 @@
+.dropdown-menu {
+  box-shadow: $box-shadow;
+}
+
+.sidebar {
+  .dropdown-menu {
+    padding: $spacer * .2;
+
+    li:not(:last-child)>.dropdown-item {
+      border-bottom: $gray-500 $border-width $border-style;
+    }
+
+    .dropdown-item {
+      padding-left: $spacer *.5;
+      padding-right: $spacer *.5;
+    }
+  }
+}
+
+.dropdown-toggle::after {
+  position: absolute;
+  right: $dropdown-item-padding-x;
+  top: 50%;
+  transform: translateY(-50%);
+}

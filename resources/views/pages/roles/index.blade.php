@@ -1,7 +1,7 @@
 <x-app-layout>
   <section class="container">
     <div class="row">
-      <div class="col-4">
+      <div class="col-6">
         <div class="card card-windows">
           <div class="card-header">
             <div class="card-title">Roles</div>
@@ -21,24 +21,25 @@
               <table class="table table-windows">
                 <thead>
                   <tr>
-                    <td>Created</td>
+                    <td class="fit">Created</td>
                     <td>Name</td>
-                    <td>Guard Name</td>
-                    <td>Permissions</td>
-                    <td>&nbsp;</td>
+                    <td class="fit">Guard Name</td>
+                    <td class="fit">Permissions</td>
+                    <td class="fit">&nbsp;</td>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($roles as $role)
-                  <tr>
-                    <td>{{ format_date($role->created_at) }}</td>
-                    <td>{{ $role->name }}</td>
-                    <td>{{ $role->guard_name }}</td>
-                    <td class="text-end">
-                      [<a href="">edit</a>]
-                      [<a href="{{ route('management.role.remove', $role->id) }}">delete</a>]
-                    </td>
-                  </tr>
+                  @foreach ($roles as $role)
+                    <tr>
+                      <td class="fit">{{ format_date($role->created_at) }}</td>
+                      <td>{{ $role->name }}</td>
+                      <td class="fit">{{ $role->guard_name }}</td>
+                      <td class="fit-wrap">{{ implode(', ', $role->permissions->pluck('name')->toArray()) }}</td>
+                      <td class="fit text-end">
+                        [<a href="">edit</a>]
+                        [<a href="{{ route('management.role.remove', $role->id) }}">delete</a>]
+                      </td>
+                    </tr>
                   @endforeach
                 </tbody>
               </table>

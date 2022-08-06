@@ -4,28 +4,44 @@
 
 .table-windows {
   margin-bottom: 0;
+  box-shadow: $box-shadow-sm;
 
   tr>td {
     border: 1px solid $gray-300;
 
     &:first-child {
-      border-left-color: $gray-600;
+      border-left-color: $gray-500;
     }
 
     &:last-child {
-      border-right-color: $gray-600;
+      border-right-color: $gray-500;
     }
   }
 
   tr:last-child>td {
-    border-bottom: 1px solid $gray-600;
+    border-bottom: 1px solid $gray-500;
   }
 
   &>thead>tr>td {
     background-color: $light;
-    border-color: $gray-600;
+    border: $border-width $border-style $gray-500;
     box-shadow: $box-shadow-inset;
-    border-width: 1px;
+  }
+}
+
+td,
+th {
+  &.fit {
+    white-space: nowrap;
+    width: 1%;
   }
 
+  &.fit-wrap {
+    width: 1%;
+  }
+}
+
+tr:active,
+tr:focus {
+  background-color: aqua;
 }

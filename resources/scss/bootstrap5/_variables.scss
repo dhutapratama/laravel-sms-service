@@ -1,26 +1,26 @@
-$blue:    #4d4fcc;
-$primary: $blue;
-$light:   #f0f0f0;
+$blue: #0078d7;
+$primary: #4d4fcc;
+$light: #f0f0f0;
 
-$font-size-base:              .8rem;
-$font-size-sm:                $font-size-base * .875;
+$font-size-base: .8rem;
+$font-size-sm: $font-size-base * .875;
 
 $spacer: 1rem;
 
-$navbar-padding-y:            $spacer * .2;
-$navbar-brand-font-size:      $font-size-base;
-$navbar-brand-padding-y:      0;
+$navbar-padding-y: $spacer * .2;
+$navbar-brand-font-size: $font-size-base;
+$navbar-brand-padding-y: 0;
 
 $btn-box-shadow: 0;
-$form-label-margin-bottom:0;
+$form-label-margin-bottom: 0;
 
-$input-btn-padding-y-sm:      .1rem;
-$input-btn-padding-x-sm:      .3rem;
-$input-btn-font-size-sm:      $font-size-sm;
+$input-btn-padding-y-sm: .1rem;
+$input-btn-padding-x-sm: .3rem;
+$input-btn-font-size-sm: $font-size-sm;
 
 
 // scss-docs-start gray-color-variables
-$white:    #fff;
+$white: #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -30,19 +30,22 @@ $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
-$black:    #000;
+$black: #000;
 // scss-docs-end gray-color-variables
 
-$red:     #dc3545;
+$red: #dc3545;
 $card-title-spacer-y: 0;
-$border-radius: 0;
+
+$border-width: 1px;
 $border-color: $gray-600;
+$border-style: solid;
+$border-radius: 0;
 
 // scss-docs-start box-shadow-variables
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
-$box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+$box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
 // scss-docs-end box-shadow-variables
 
 // Button
@@ -71,7 +74,7 @@ $input-btn-padding-x-lg: .8rem !default;
 
 // Tables
 $table-cell-padding-y: 0;
-$table-cell-padding-x: .2rem;
+$table-cell-padding-x: .5rem;
 $table-cell-padding-y-sm: $table-cell-padding-y;
 $table-cell-padding-x-sm: $table-cell-padding-x;
 $table-border-color: $gray-400;
@@ -88,3 +91,37 @@ $alert-padding-x: $spacer * .2;
 // $alert-color-scale: 40% !default;
 // $alert-dismissible-padding-r: $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
 // scss-docs-end alert-variables
+
+$dropdown-min-width: 13rem;
+// $dropdown-padding-x: 0;
+$dropdown-padding-y: .25rem;
+$dropdown-spacer: 0;
+// $dropdown-font-size: $font-size-base;
+// $dropdown-color: $body-color;
+$dropdown-bg: $light;
+// $dropdown-border-color: var(--#{$prefix}border-color-translucent);
+// $dropdown-border-radius: $border-radius;
+// $dropdown-border-width: $border-width;
+// $dropdown-inner-border-radius: subtract($dropdown-border-radius, $dropdown-border-width);
+// $dropdown-divider-bg: $dropdown-border-color;
+$dropdown-divider-margin-y: $spacer * .25;
+// $dropdown-box-shadow: $box-shadow;
+
+$dropdown-link-color: $gray-900;
+$dropdown-link-hover-color: $dropdown-link-color;
+$dropdown-link-hover-bg: rgba($blue, 30%);
+
+$dropdown-link-active-color: $dropdown-link-color;
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+
+// $dropdown-link-disabled-color: $gray-500;
+
+$dropdown-item-padding-y: $spacer * .25;
+$dropdown-item-padding-x: $spacer;
+
+// $dropdown-header-color: $gray-600;
+// $dropdown-header-padding-x: $dropdown-item-padding-x;
+// $dropdown-header-padding-y: $dropdown-padding-y;
+// // fusv-disable
+// $dropdown-header-padding: $dropdown-header-padding-y $dropdown-header-padding-x; // Deprecated in v5.2.0
+// // fusv-enable

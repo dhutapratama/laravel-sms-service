@@ -23,3 +23,8 @@
 .card-auth {
   width: 30rem;
 }
+
+.card-toolbox {
+  display: flex;
+  padding: ($spacer *.25) ($spacer *.25) 0 ($spacer *.25);
+}
