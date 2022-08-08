@@ -7,12 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Outbox extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-        "phone_id",
-        "destination_number",
-        "text",
-        "status",
-    ];
+  protected $fillable = [
+    "phone_id",
+    "destination_number",
+    "text",
+    "status",
+  ];
+
+  public function phone()
+  {
+    return $this->belongsTo(Phone::class);
+  }
 }

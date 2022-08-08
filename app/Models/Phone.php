@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Phone extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-        "device_id",
-        "device",
-        "imei",
-        "brand",
-        "model",
-        "simcard",
-        "operator_name",
-        "status",
-        "resource_id"
-    ];
+  protected $fillable = [
+    "device_id",
+    "device",
+    "imei",
+    "brand",
+    "model",
+    "simcard",
+    "operator_name",
+    "status",
+    "resource_id"
+  ];
 }
