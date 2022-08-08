@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Sms\OutboxController;
+use App\Http\Controllers\Sms\SentController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('sms')->name('sms')->group(function () {
-  Route::get('', [UserController::class, 'index'])->name('.create');
-  Route::get('outbox', [UserController::class, 'outbox'])->name('.outbox');
-  Route::get('sent', [UserController::class, 'sent'])->name('.sent');
+  Route::get('', [OutboxController::class, 'index'])->name('.create');
+  Route::get('outbox', [OutboxController::class, 'index'])->name('.outbox');
+  Route::get('sent', [SentController::class, 'index'])->name('.sent');
 });
