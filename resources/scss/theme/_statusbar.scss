@@ -1,6 +1,6 @@
 .statusbar {
   display: flex;
-  column-gap: $font-size-base;
+  column-gap: $spacer * .5;
   div {
     border-right: 1px solid #fff;
     border-bottom: 1px solid #fff;

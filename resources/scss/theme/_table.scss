@@ -1,5 +1,6 @@
 .table-windows-container {
   background-color: $white;
+  overflow-x: auto;
 }
 
 .table-windows {
@@ -31,8 +32,9 @@
 
 td,
 th {
+  white-space: nowrap;
+
   &.fit {
-    white-space: nowrap;
     width: 1%;
   }
 

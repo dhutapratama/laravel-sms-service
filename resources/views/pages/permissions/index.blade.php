@@ -1,7 +1,7 @@
 <x-app-layout>
   <section class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         <div class="card card-windows">
           <div class="card-header">
             <div class="card-title">Permissions</div>
@@ -21,23 +21,24 @@
               <table class="table table-windows">
                 <thead>
                   <tr>
-                    <td class="fit">Created</td>
+                    <td>Created</td>
                     <td>Name</td>
-                    <td class="fit">Guard Name</td>
+                    <td>Guard Name</td>
+                    <td>Permissions</td>
                     <td>&nbsp;</td>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($permissions as $permission)
-                    <tr>
-                      <td class="fit">{{ format_date($permission->created_at) }}</td>
-                      <td>{{ $permission->name }}</td>
-                      <td class="fit">{{ $permission->guard_name }}</td>
-                      <td class="text-end fit">
-                        [<a href="#">edit</a>]
-                        [<a href="{{ route('management.permission.remove', $permission->id) }}">delete</a>]
-                      </td>
-                    </tr>
+                  @foreach($permissions as $permission)
+                  <tr>
+                    <td>{{ format_date($permission->created_at) }}</td>
+                    <td>{{ $permission->name }}</td>
+                    <td>{{ $permission->guard_name }}</td>
+                    <td class="text-end">
+                      [<a href="#">edit</a>]
+                      [<a href="{{ route('management.permission.remove', $permission->id) }}">delete</a>]
+                    </td>
+                  </tr>
                   @endforeach
                 </tbody>
               </table>
@@ -50,18 +51,24 @@
 
   <x-modal.windows id="new" label="newPermission" title="Create New: Permission" :isform="true">
     <x-slot name="form" method="POST" action="{{ route('management.permission.save') }}"></x-slot>
-    <x-slot name="body">
-      <div class="row g-2">
-        <div class="col-2 text-end">
+    <x-slot name="content">
+      <div class="row g-1 mb-1">
+        <div class="col-2 windows-label">
           <label for="name" class="form-label">Name: </label>
         </div>
         <div class="col-10">
-          <input type="text" class="form-control" id="name" name="name">
+          <input type="text" class="form-control" id="name" name="name" value="">
         </div>
       </div>
     </x-slot>
+    <x-slot name="action">
+      <button type="submit" class="btn btn-toolbar">Create</button>
+      <button type="button" class="btn btn-toolbar" data-bs-dismiss="modal" aria-label="Close">Close</button>
+    </x-slot>
     <x-slot name="footer">
-      <button type="submit" class="btn btn-primary">Create</button>
+      <div class="statusbar flex-grow-1">
+        <div class="flex-fill">Create new permission</div>
+      </div>
     </x-slot>
   </x-modal.windows>
 </x-app-layout>

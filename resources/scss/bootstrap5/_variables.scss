@@ -1,5 +1,10 @@
-$blue: #0078d7;
-$primary: #4d4fcc;
+// Prefix for :root CSS variables
+
+$variable-prefix: bs-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix ;
+
+$blue: #4d4fcc;
+$primary: $blue;
 $light: #f0f0f0;
 
 $font-size-base: .8rem;
@@ -14,6 +19,8 @@ $navbar-brand-padding-y: 0;
 $btn-box-shadow: 0;
 $form-label-margin-bottom: 0;
 
+// $input-btn-padding-y: 0;
+// $input-btn-padding-x: .2rem;
 $input-btn-padding-y-sm: .1rem;
 $input-btn-padding-x-sm: .3rem;
 $input-btn-font-size-sm: $font-size-sm;
@@ -33,19 +40,40 @@ $gray-900: #212529;
 $black: #000;
 // scss-docs-end gray-color-variables
 
-$red: #dc3545;
+$red: #e81123;
+$pink: #e85f7b;
+
 $card-title-spacer-y: 0;
 
+// scss-docs-start border-variables
 $border-width: 1px;
-$border-color: $gray-600;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+
 $border-style: solid;
+$border-color: $gray-600;
+$border-color-translucent: rgba($black, .175);
+// scss-docs-end border-variables
+
+// scss-docs-start border-radius-variables
 $border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-radius-xl: 0;
+// $border-radius-2xl: 2rem;
+// $border-radius-pill: 50rem;
+// scss-docs-end border-radius-variables
 
 // scss-docs-start box-shadow-variables
-$box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;
-$box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
+$box-shadow: 0 .5rem 1rem rgba($black, .15);
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, .075);
 // scss-docs-end box-shadow-variables
 
 // Button
@@ -65,16 +93,16 @@ $input-border-radius-sm: 0;
 $input-border-radius-lg: 0;
 
 // scss-docs-start input-btn-variables
-$input-btn-padding-y: .2rem !default;
-$input-btn-padding-x: .4rem !default;
-$input-btn-padding-y-sm: .2rem !default;
-$input-btn-padding-x-sm: .4rem !default;
-$input-btn-padding-y-lg: .4rem !default;
-$input-btn-padding-x-lg: .8rem !default;
+$input-btn-padding-y: .2rem;
+$input-btn-padding-x: .4rem;
+$input-btn-padding-y-sm: .2rem;
+$input-btn-padding-x-sm: .4rem;
+$input-btn-padding-y-lg: .4rem;
+$input-btn-padding-x-lg: .8rem;
 
 // Tables
 $table-cell-padding-y: 0;
-$table-cell-padding-x: .5rem;
+$table-cell-padding-x: .2rem;
 $table-cell-padding-y-sm: $table-cell-padding-y;
 $table-cell-padding-x-sm: $table-cell-padding-x;
 $table-border-color: $gray-400;
@@ -82,16 +110,15 @@ $table-border-color: $gray-400;
 // scss-docs-start alert-variables
 $alert-padding-y: $spacer * .2;
 $alert-padding-x: $spacer * .2;
-// $alert-margin-bottom: 1rem !default;
-// $alert-border-radius: $border-radius  !default;
-// $alert-link-font-weight: $font-weight-bold  !default;
-// $alert-border-width: $border-width  !default;
-// $alert-bg-scale: -80% !default;
-// $alert-border-scale: -70% !default;
-// $alert-color-scale: 40% !default;
-// $alert-dismissible-padding-r: $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
+// $alert-margin-bottom: 1rem;
+// $alert-border-radius: $border-radius ;
+// $alert-link-font-weight: $font-weight-bold ;
+// $alert-border-width: $border-width ;
+// $alert-bg-scale: -80%;
+// $alert-border-scale: -70%;
+// $alert-color-scale: 40%;
+// $alert-dismissible-padding-r: $alert-padding-x * 3; // 3x covers width of x plus default padding on either side
 // scss-docs-end alert-variables
-
 $dropdown-min-width: 13rem;
 // $dropdown-padding-x: 0;
 $dropdown-padding-y: .25rem;
@@ -125,3 +152,103 @@ $dropdown-item-padding-x: $spacer;
 // // fusv-disable
 // $dropdown-header-padding: $dropdown-header-padding-y $dropdown-header-padding-x; // Deprecated in v5.2.0
 // // fusv-enable
+
+
+// Modals
+
+// scss-docs-start modal-variables
+$modal-inner-padding: $spacer * .25;
+
+// $modal-footer-margin-between: .5rem;
+
+// $modal-dialog-margin: .5rem;
+// $modal-dialog-margin-y-sm-up: 1.75rem;
+
+// $modal-title-line-height: $line-height-base ;
+
+// $modal-content-color: null;
+$modal-content-bg: $light;
+$modal-content-border-color: var(--#{$prefix}border-color);
+// $modal-content-border-width: $border-width ;
+$modal-content-border-radius: $border-radius-lg;
+// $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width);
+// $modal-content-box-shadow-xs: $box-shadow-sm ;
+// $modal-content-box-shadow-sm-up: $box-shadow ;
+
+$modal-backdrop-bg: $light;
+$modal-backdrop-opacity: .75;
+
+//$modal-header-border-color: var(--#{$prefix}border-color);
+$modal-header-border-width: 0;
+$modal-header-padding-y: 0;
+$modal-header-padding-x: 0;
+// $modal-header-padding: $modal-header-padding-y $modal-header-padding-x ; // Keep this for backwards compatibility
+
+$modal-footer-bg: $light;
+// $modal-footer-border-color: $modal-header-border-color ;
+// $modal-footer-border-width: $modal-header-border-width ;
+
+// $modal-sm: 300px;
+// $modal-md: 500px;
+// $modal-lg: 800px;
+// $modal-xl: 1140px;
+
+// $modal-fade-transform: translate(0, -50px);
+// $modal-show-transform: none;
+// $modal-transition: transform .3s ease-out;
+// $modal-scale-transform: scale(1.02);
+// scss-docs-end modal-variables
+
+// scss-docs-start form-input-variables
+$input-padding-y: .1rem;
+$input-padding-x: .2rem;
+// $input-font-family: $input-btn-font-family ;
+// $input-font-size: $input-btn-font-size ;
+// $input-font-weight: $font-weight-base ;
+// $input-line-height: $input-btn-line-height ;
+
+// $input-padding-y-sm: $input-btn-padding-y-sm ;
+// $input-padding-x-sm: $input-btn-padding-x-sm ;
+// $input-font-size-sm: $input-btn-font-size-sm ;
+
+// $input-padding-y-lg: $input-btn-padding-y-lg ;
+// $input-padding-x-lg: $input-btn-padding-x-lg ;
+// $input-font-size-lg: $input-btn-font-size-lg ;
+
+// $input-bg: $body-bg ;
+// $input-disabled-color: null;
+// $input-disabled-bg: $gray-200 ;
+// $input-disabled-border-color: null;
+
+// $input-color: $body-color ;
+// $input-border-color: $gray-400 ;
+// $input-border-width: $input-btn-border-width ;
+// $input-box-shadow: $box-shadow-inset ;
+
+// $input-border-radius: $border-radius ;
+// $input-border-radius-sm: $border-radius-sm ;
+// $input-border-radius-lg: $border-radius-lg ;
+
+// $input-focus-bg: $input-bg ;
+// $input-focus-border-color: tint -color($component-active-bg, 50%);
+// $input-focus-color: $input-color ;
+// $input-focus-width: $input-btn-focus-width ;
+// $input-focus-box-shadow: $input-btn-focus-box-shadow ;
+
+// $input-placeholder-color: $gray-600 ;
+// $input-plaintext-color: $body-color ;
+
+// $input-height-border: $input-border-width * 2;
+
+// $input-height-inner: add($input-line-height * 1em, $input-padding-y * 2);
+// $input-height-inner-half: add($input-line-height * .5em, $input-padding-y);
+// $input-height-inner-quarter: add($input-line-height * .25em, $input-padding-y * .5);
+
+// $input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
+// $input-height-sm: add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
+// $input-height-lg: add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
+
+// $input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// $form-color-width: 3rem;
+// scss-docs-end form-input-variables

@@ -11,3 +11,9 @@
 .windows-menu {
   margin-left: $font-size-base * .5;
 }
+
+.windows-label {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ env('APP_NAME') }}</title>
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link href="{{ asset('css/bundle.css') }}" rel="stylesheet">
   <link href="{{ asset('css/misp-theme.css') }}" rel="stylesheet">
 </head>

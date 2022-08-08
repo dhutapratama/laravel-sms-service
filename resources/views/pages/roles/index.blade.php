@@ -1,69 +1,68 @@
 <x-app-layout>
   <section class="container">
     <div class="row">
-      <div class="col-6">
-        <div class="card card-windows">
-          <div class="card-header">
-            <div class="card-title">Roles</div>
-            <div class="card-toolbar">
-              <button class="btn btn-sm btn-windows-close flex-column-fluid" type="button">
-                <i data-feather="x" class="icon-windows"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-menu">
-            <div class="btn-group btn-group-menu" role="group" aria-label="Small button group">
-              <a href="#" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#new">New</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="table-windows-container">
-              <table class="table table-windows">
-                <thead>
+      <div class="col-12 col-md-9 col-lg-9">
+        <x-card>
+          <x-slot name="title">Roles</x-slot>
+          <x-slot name="toolbox">
+            <button class="btn btn-toolbar-app" type="button" title="New" data-bs-toggle="modal" data-bs-target="#new">
+              <i data-feather="plus" class="icon icon-sm"></i>
+            </button>
+            <button class="btn btn-toolbar-app" type="button" title="Remove">
+              <i data-feather="minus" class="icon icon-sm"></i>
+            </button>
+          </x-slot>
+          <div class="table-windows-container">
+            <table class="table table-windows">
+              <thead>
+                <tr>
+                  <td>Created</td>
+                  <td>Name</td>
+                  <td>Guard Name</td>
+                  <td>Permissions</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($roles as $role)
                   <tr>
-                    <td class="fit">Created</td>
-                    <td>Name</td>
-                    <td class="fit">Guard Name</td>
-                    <td class="fit">Permissions</td>
-                    <td class="fit">&nbsp;</td>
+                    <td>{{ format_date($role->created_at) }}</td>
+                    <td>{{ $role->name }}</td>
+                    <td>{{ $role->guard_name }}</td>
+                    <td class="text-end">
+                      [<a href="">edit</a>]
+                      [<a href="{{ route('management.role.remove', $role->id) }}">delete</a>]
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  @foreach ($roles as $role)
-                    <tr>
-                      <td class="fit">{{ format_date($role->created_at) }}</td>
-                      <td>{{ $role->name }}</td>
-                      <td class="fit">{{ $role->guard_name }}</td>
-                      <td class="fit-wrap">{{ implode(', ', $role->permissions->pluck('name')->toArray()) }}</td>
-                      <td class="fit text-end">
-                        [<a href="">edit</a>]
-                        [<a href="{{ route('management.role.remove', $role->id) }}">delete</a>]
-                      </td>
-                    </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
+                @endforeach
+              </tbody>
+            </table>
           </div>
-        </div>
+        </x-card>
       </div>
     </div>
   </section>
 
-  <x-modal.windows id="new" label="newRole" title="Create New: Role" :isform="true">
+  <x-modal.windows id="new" label="newPermission" title="Create New: Role" :isform="true">
     <x-slot name="form" method="POST" action="{{ route('management.role.save') }}"></x-slot>
-    <x-slot name="body">
-      <div class="row g-2">
-        <div class="col-2 text-end">
+    <x-slot name="content">
+      <div class="row g-1 mb-1">
+        <div class="col-2 windows-label">
           <label for="name" class="form-label">Name: </label>
         </div>
         <div class="col-10">
-          <input type="text" class="form-control" id="name" name="name">
+          <input type="text" class="form-control" id="name" name="name" value="">
         </div>
       </div>
     </x-slot>
+    <x-slot name="action">
+      <button type="submit" class="btn btn-toolbar">Create</button>
+      <button type="button" class="btn btn-toolbar" data-bs-dismiss="modal" aria-label="Close">Close</button>
+    </x-slot>
     <x-slot name="footer">
-      <button type="submit" class="btn btn-primary">Create</button>
+      <div class="statusbar flex-grow-1">
+        <div class="flex-fill">Create new role</div>
+      </div>
     </x-slot>
   </x-modal.windows>
 </x-app-layout>
