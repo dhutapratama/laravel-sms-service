@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Sms;
+namespace App\Http\Controllers\Services;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sent;

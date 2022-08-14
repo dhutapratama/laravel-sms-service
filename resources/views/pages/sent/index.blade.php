@@ -3,7 +3,7 @@
   <section class="container">
     <div class="row">
       <div class="col-12 col-md-9 col-lg-9">
-        <x-card>
+        <x-card.windows>
           <x-slot name="title">Sent</x-slot>
           <div class="table-windows-container">
             <table class="table table-windows">
@@ -37,7 +37,7 @@
               </tbody>
             </table>
           </div>
-        </x-card>
+        </x-card.windows>
       </div>
     </div>
   </section>
