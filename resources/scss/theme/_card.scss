@@ -15,8 +15,24 @@
     background-color: $white;
   }
 
+  .card-navbar {
+    margin-top: $spacer * .25;
+    margin-right: $spacer * .25;
+    margin-left: $spacer * .25;
+  }
+
   .card-body {
     padding: $spacer * .25;
+  }
+
+  .card-footer {
+    display: flex;
+    padding: 0;
+    background-color: $light;
+    border-top: 0;
+    padding: $spacer * .25;
+
+    color: $gray-900;
   }
 }
 
@@ -27,4 +43,26 @@
 .card-toolbox {
   display: flex;
   padding: ($spacer *.25) ($spacer *.25) 0 ($spacer *.25);
+}
+
+.card-form {
+  display: flex;
+
+  .card-form-content {
+    flex-grow: 1;
+    margin-right: $spacer * .5;
+  }
+
+  .card-form-action {
+    min-width: 5rem;
+    display: flex;
+    flex-direction: column;
+
+    &>button,
+    &>a {
+      margin-bottom: $spacer * .25;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
 }

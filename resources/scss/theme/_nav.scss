@@ -1,0 +1,16 @@
+.nav-tabs {
+  .nav-link {
+    background-color: $gray-300;
+
+    border-top: 1px $white solid;
+    border-right: 1px $gray-500 solid;
+    border-left: 1px $white solid;
+    border-bottom: 1px $gray-300 solid;
+
+    &.active {
+      border-top: 1px $white solid;
+      border-right: 1px $gray-500 solid;
+      border-left: 1px $white solid;
+    }
+  }
+}

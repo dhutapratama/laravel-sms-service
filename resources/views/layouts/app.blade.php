@@ -5,7 +5,7 @@
         <div class="windows-title">
           <a href="{{ url('/') }}" class="navbar-brand d-flex align-items-center">
             <span data-feather="shopping-cart" class="icon-sm me-2"></span>
-            {{ env('APP_NAME') }} v1.0.0
+            {{ env('APP_NAME') }}
           </a>
         </div>
         <div class="windows-action">
@@ -49,9 +49,9 @@
         <button class="btn btn-toolbar" type="button" title="Dashboard">
           <i data-feather="home" class="icon icon-sm"></i>
         </button>
-        <button class="btn btn-toolbar" type="button" title="Android Device">
+        <a href="{{ route('phone') }}" class="btn btn-toolbar" title="Android Device">
           <i data-feather="smartphone" class="icon icon-sm"></i>
-        </button>
+        </a>
         <a href="{{ route('dashboard') }}" class="btn btn-toolbar ms-2" title="Your account type, click to upgrade.">
           Account Type: Regular
         </a>
@@ -71,6 +71,7 @@
     <x-sidebar.general></x-sidebar.general>
     <div class="content flex-column flex-row-fluid">
       <main class="flex-column-fluid flex-grow-1 py-2">
+        <x-alert type="danger"></x-alert>
         {{ $slot }}
       </main>
     </div>

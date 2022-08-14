@@ -1,32 +1,40 @@
 .table-windows-container {
   background-color: $white;
   overflow-x: auto;
+  min-height: 10rem;
+  box-shadow: $box-shadow-sm;
+  border: 1px solid $gray-500;
 }
 
 .table-windows {
   margin-bottom: 0;
-  box-shadow: $box-shadow-sm;
 
   tr>td {
+
     border: 1px solid $gray-300;
 
     &:first-child {
-      border-left-color: $gray-500;
+      border-left: none;
     }
 
     &:last-child {
-      border-right-color: $gray-500;
+      border-right: none;
     }
-  }
-
-  tr:last-child>td {
-    border-bottom: 1px solid $gray-500;
   }
 
   &>thead>tr>td {
     background-color: $light;
-    border: $border-width $border-style $gray-500;
     box-shadow: $box-shadow-inset;
+    border: 1px solid $gray-500;
+    border-top: none;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 
@@ -43,7 +51,7 @@ th {
   }
 }
 
-tr:active,
-tr:focus {
-  background-color: aqua;
-}
+// tr:active,
+// tr:focus {
+//   //background-color: aqua;
+// }

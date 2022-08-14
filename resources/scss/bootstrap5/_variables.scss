@@ -12,9 +12,49 @@ $font-size-sm: $font-size-base * .875;
 
 $spacer: 1rem;
 
+
+// scss-docs-start navbar-variables
 $navbar-padding-y: $spacer * .2;
+// $navbar-padding-x: null !default;
+
+// $navbar-nav-link-padding-x: .5rem !default;
+
 $navbar-brand-font-size: $font-size-base;
+
+// // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+// $nav-link-height: $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
+// $navbar-brand-height: $navbar-brand-font-size * $line-height-base  !default;
 $navbar-brand-padding-y: 0;
+// $navbar-brand-margin-end: 1rem !default;
+
+// $navbar-toggler-padding-y: .25rem !default;
+// $navbar-toggler-padding-x: .75rem !default;
+// $navbar-toggler-font-size: $font-size-lg  !default;
+// $navbar-toggler-border-radius: $btn-border-radius  !default;
+// $navbar-toggler-focus-width: $btn-focus-width  !default;
+// $navbar-toggler-transition: box-shadow .15s ease-in-out !default;
+// // scss-docs-end navbar-variables
+
+// // scss-docs-start navbar-theme-variables
+// $navbar-dark-color: rgba($white, .55) !default;
+// $navbar-dark-hover-color: rgba($white, .75) !default;
+// $navbar-dark-active-color: $white  !default;
+// $navbar-dark-disabled-color: rgba($white, .25) !default;
+// $navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+// $navbar-dark-toggler-border-color: rgba($white, .1) !default;
+
+// $navbar-light-color: rgba($black, .55) !default;
+// $navbar-light-hover-color: rgba($black, .7) !default;
+// $navbar-light-active-color: rgba($black, .9) !default;
+// $navbar-light-disabled-color: rgba($black, .3) !default;
+// $navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+// $navbar-light-toggler-border-color: rgba($black, .1) !default;
+
+// $navbar-light-brand-color: $navbar-light-active-color  !default;
+// $navbar-light-brand-hover-color: $navbar-light-active-color  !default;
+// $navbar-dark-brand-color: $navbar-dark-active-color  !default;
+// $navbar-dark-brand-hover-color: $navbar-dark-active-color  !default;
+// scss-docs-end navbar-theme-variables
 
 $btn-box-shadow: 0;
 $form-label-margin-bottom: 0;
@@ -252,3 +292,70 @@ $input-padding-x: .2rem;
 
 // $form-color-width: 3rem;
 // scss-docs-end form-input-variables
+
+// scss-docs-start nav-variables
+$nav-link-padding-y: .2rem;
+$nav-link-padding-x: .4rem;
+// $nav-link-font-size: null !default;
+// $nav-link-font-weight: null !default;
+$nav-link-color: $gray-900;
+$nav-link-hover-color: $nav-link-color;
+// $nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
+// $nav-link-disabled-color: $gray-600  !default;
+
+$nav-tabs-border-color: $gray-300  !default;
+// $nav-tabs-border-width: $border-width  !default;
+// $nav-tabs-border-radius: $border-radius  !default;
+$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color;
+$nav-tabs-link-active-color: $gray-700;
+$nav-tabs-link-active-bg: $light;
+$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
+
+// $nav-pills-border-radius: $border-radius  !default;
+// $nav-pills-link-active-color: $component-active-color  !default;
+// $nav-pills-link-active-bg: $component-active-bg  !default;
+// scss-docs-end nav-variables
+
+// scss-docs-start form-select-variables
+// $form-select-padding-y: $input-padding-y  !default;
+// $form-select-padding-x: $input-padding-x  !default;
+// $form-select-font-family: $input-font-family  !default;
+// $form-select-font-size: $input-font-size  !default;
+// $form-select-indicator-padding: $form-select-padding-x * 3 !default; // Extra padding for background-image
+// $form-select-font-weight: $input-font-weight  !default;
+// $form-select-line-height: $input-line-height  !default;
+// $form-select-color: $input-color  !default;
+// $form-select-bg: $input-bg  !default;
+// $form-select-disabled-color: null !default;
+// $form-select-disabled-bg: $gray-200  !default;
+// $form-select-disabled-border-color: $input-disabled-border-color  !default;
+// $form-select-bg-position: right $form-select-padding-x center !default;
+// $form-select-bg-size: 16px 12px !default; // In pixels because image dimensions
+// $form-select-indicator-color: $gray-800  !default;
+// $form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
+
+// $form-select-feedback-icon-padding-end: $form-select-padding-x * 2.5 + $form-select-indicator-padding  !default;
+// $form-select-feedback-icon-position: center right $form-select-indicator-padding  !default;
+// $form-select-feedback-icon-size: $input-height-inner-half $input-height-inner-half  !default;
+
+// $form-select-border-width: $input-border-width  !default;
+// $form-select-border-color: $input-border-color  !default;
+// $form-select-border-radius: $input-border-radius  !default;
+$form-select-box-shadow: none;
+
+// $form-select-focus-border-color: $input-focus-border-color  !default;
+// $form-select-focus-width: $input-focus-width  !default;
+$form-select-focus-box-shadow: none;
+
+// $form-select-padding-y-sm: $input-padding-y-sm  !default;
+// $form-select-padding-x-sm: $input-padding-x-sm  !default;
+// $form-select-font-size-sm: $input-font-size-sm  !default;
+// $form-select-border-radius-sm: $input-border-radius-sm  !default;
+
+// $form-select-padding-y-lg: $input-padding-y-lg  !default;
+// $form-select-padding-x-lg: $input-padding-x-lg  !default;
+// $form-select-font-size-lg: $input-font-size-lg  !default;
+// $form-select-border-radius-lg: $input-border-radius-lg  !default;
+
+// $form-select-transition: $input-transition  !default;
+// scss-docs-end form-select-variables

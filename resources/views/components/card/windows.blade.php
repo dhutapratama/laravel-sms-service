@@ -7,6 +7,11 @@
       </button>
     </div>
   </div>
+  @if (isset($navbar))
+    <div class="card-navbar">
+      {{ $navbar }}
+    </div>
+  @endif
   @if (isset($toolbox))
     <div class="card-toolbox">
       {{ $toolbox }}

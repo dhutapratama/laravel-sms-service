@@ -12,6 +12,7 @@
         Sent
       </a>
     </li>
+    @role('admin')
     <li class="nav-item dropend">
       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <span data-feather="settings" class="icon icon-md"></span>
@@ -35,6 +36,6 @@
         </li>
       </ul>
     </li>
-
+    @endrole
   </ul>
 </nav>

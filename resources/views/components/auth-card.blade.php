@@ -9,9 +9,8 @@
   </div>
   <div class="card-menu">
     <div class="btn-group btn-group-menu" role="group" aria-label="Small button group">
-      <button type="button" class="btn btn-menu">Session</button>
-      <button type="button" class="btn btn-menu">Settings</button>
-      <button type="button" class="btn btn-menu">Dashboard</button>
+      <button type="button" class="btn btn-menu">Menu</button>
+      <button type="button" class="btn btn-menu">Help</button>
     </div>
   </div>
   <div class="card-body">
@@ -23,9 +22,9 @@
   <footer>
     <div class="container-fluid">
       <div class="statusbar">
-        <div class="flex-fill">&copy;2022 Mikrotik ISP Team</div>
+        <div class="flex-fill">&copy;2022 SMS Gateway Laravel Engine</div>
         <div class="flex-fill">Indonesia</div>
-        <div class="flex-fill">Online</div>
+        <div class="flex-fill">v0.0.1/alpha</div>
       </div>
     </div>
   </footer>

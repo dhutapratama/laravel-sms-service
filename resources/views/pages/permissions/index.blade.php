@@ -1,56 +1,51 @@
 <x-app-layout>
   <section class="container">
     <div class="row">
-      <div class="col-4">
-        <div class="card card-windows">
-          <div class="card-header">
-            <div class="card-title">Permissions</div>
-            <div class="card-toolbar">
-              <button class="btn btn-sm btn-windows-close flex-column-fluid" type="button">
-                <i data-feather="x" class="icon-windows"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-menu">
-            <div class="btn-group btn-group-menu" role="group" aria-label="Small button group">
-              <a href="#" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#new">New</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="table-windows-container">
-              <table class="table table-windows">
-                <thead>
+      <div class="col-12 col-md-9 col-lg-9">
+        <x-card.windows>
+          <x-slot name="title">Permissions</x-slot>
+          <x-slot name="toolbox">
+            <button class="btn btn-toolbar-app" type="button" title="New" data-bs-toggle="modal" data-bs-target="#new">
+              <i data-feather="plus" class="icon icon-sm"></i>
+            </button>
+            <button class="btn btn-toolbar-app" type="button" title="Remove">
+              <i data-feather="minus" class="icon icon-sm"></i>
+            </button>
+          </x-slot>
+          <div class="table-windows-container">
+            <table class="table table-windows">
+              <thead>
+                <tr>
+                  <td>Created</td>
+                  <td>Name</td>
+                  <td>Guard Name</td>
+                  <td>Roles</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($permissions as $permission)
                   <tr>
-                    <td>Created</td>
-                    <td>Name</td>
-                    <td>Guard Name</td>
-                    <td>Permissions</td>
-                    <td>&nbsp;</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($permissions as $permission)
-                  <tr>
-                    <td>{{ format_date($permission->created_at) }}</td>
+                    <td class="fit">{{ format_date($permission->created_at) }}</td>
                     <td>{{ $permission->name }}</td>
-                    <td>{{ $permission->guard_name }}</td>
+                    <td class="fit">{{ $permission->guard_name }}</td>
+                    <td>{{ implode(', ', $permission->roles->pluck('name')->all()) }}</td>
                     <td class="text-end">
-                      [<a href="#">edit</a>]
-                      [<a href="{{ route('management.permission.remove', $permission->id) }}">delete</a>]
+                      [<a href="{{ route('management.permission.edit', $permission->id) }}">edit</a>]
+                      [<a href="{{ route('management.permission.delete', $permission->id) }}">delete</a>]
                     </td>
                   </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
+                @endforeach
+              </tbody>
+            </table>
           </div>
-        </div>
+        </x-card.windows>
       </div>
     </div>
   </section>
 
   <x-modal.windows id="new" label="newPermission" title="Create New: Permission" :isform="true">
-    <x-slot name="form" method="POST" action="{{ route('management.permission.save') }}"></x-slot>
+    <x-slot name="form" method="POST" action="{{ route('management.permission') }}"></x-slot>
     <x-slot name="content">
       <div class="row g-1 mb-1">
         <div class="col-2 windows-label">

@@ -3,10 +3,11 @@
 use App\Http\Controllers\Managements\PermissionController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('permission')->name('.permission')->group(function() {
+Route::group(['prefix' => 'permission', 'as' => '.permission'], function () {
   Route::get('', [PermissionController::class, 'index']);
-  Route::get('edit', [PermissionController::class, 'edit'])->name('.edit');
-  Route::get('remove/{id}', [PermissionController::class, 'remove'])->name('.remove');
+  Route::post('', [PermissionController::class, 'save']);
 
-  Route::post('save', [PermissionController::class, 'save'])->name('.save');
+  Route::get('edit/{id}', [PermissionController::class, 'edit'])->name('.edit');
+  Route::get('delete/{id}', [PermissionController::class, 'delete'])->name('.delete');
+
 });

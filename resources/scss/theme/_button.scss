@@ -20,9 +20,9 @@
   border-radius: 0;
   border: 0;
   box-shadow: none;
-  flex: 1 0 auto;
-  padding-left: $font-size-base;
-  padding-right: $font-size-base;
+    flex: 1 0 auto;
+    padding-left: $font-size-base;
+    padding-right: $font-size-base;
 
   &-close {
     border-radius: 0;
@@ -32,11 +32,7 @@
     padding-left: $font-size-base;
     padding-right: $font-size-base;
 
-    &:hover,
-    &:active,
-    &:visited,
-    &:focus,
-    &:focus-visible {
+    &:hover, &:active, &:visited, &:focus, &:focus-visible {
       background-color: $red;
       color: $gray-900;
       border: none;
@@ -45,19 +41,14 @@
     }
   }
 
-  &:hover,
-  &:active,
-  &:visited,
-  &:focus,
-  &:focus-visible {
+  &:hover, &:active, &:visited, &:focus, &:focus-visible {
     background-color: $light;
     color: $gray-900;
     border: none;
     border-radius: 0;
   }
 
-  i,
-  svg {
+  i, svg {
     vertical-align: middle;
   }
 }
@@ -71,14 +62,11 @@
   padding-left: $font-size-base * .5;
   padding-right: $font-size-base * .5;
 
-  &:hover,
-  &:focus,
-  &:focus-within {
+  &:hover, &:focus, &:focus-within {
     border: 1px $gray-500 solid;
   }
 
-  &:active,
-  &:focus-visible {
+  &:active, &:focus-visible {
     background: $gray-400;
     -webkit-box-shadow: inset 0px 0px 5px $gray-600;
     -moz-box-shadow: inset 0px 0px 5px $gray-600;
@@ -92,13 +80,13 @@
   .icon {
     color: $primary;
 
-    &:hover,
-    &:focus,
-    &:focus-within,
-    &:active,
-    &:focus-visible {
-      color: $primary;
-    }
+     &:hover, &:focus, &:focus-within {
+        color: $primary;
+      }
+
+      &:active, &:focus-visible {
+        color: $primary;
+      }
   }
 }
 
@@ -116,14 +104,12 @@
   box-shadow: $box-shadow-sm;
   transition: none !important;
 
-
-  &:hover {
+  &:focus, &:hover {
     border: 1px $gray-500 solid;
+    box-shadow: $box-shadow-sm;
   }
 
-  &:focus,
-  &:active,
-  &:focus-visible {
+  &:active, &:focus-visible {
     box-shadow: inset 0px 0px 5px $gray-500;
 
     border-bottom: 1px $light solid;
@@ -151,8 +137,7 @@
 .card-toolbar {
   color: $light;
 
-  .btn-windows,
-  .btn-windows-close {
+  .btn-windows, .btn-windows-close {
     padding-top: $spacer * .3;
     padding-bottom: $spacer * .3;
     color: $white;

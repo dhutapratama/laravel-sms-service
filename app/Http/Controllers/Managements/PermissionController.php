@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Managements;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
@@ -21,16 +21,34 @@ class PermissionController extends Controller
 
   public function save(Request $r): RedirectResponse
   {
-    $permission = Permission::create(['name' => $r->name]);
+    $r->validate([
+      'name' => ['required'],
+    ]);
+
+    $data = Permission::find($r->post('id'));
+    if (!$data) {
+      $data = new Permission;
+    }
+
+    $data->name   = $r->name;
+    $data->save();
 
     return redirect(route('management.permission'));
   }
 
-  public function edit()
+
+  public function edit(Request $r, int $id): View
   {
+    $data = Permission::find($id);
+    if (!$data) {
+      return redirect(route('management.permission'))
+        ->withErrors("permission not found");
+    }
+
+    return view('pages.permissions.edit', ['permission' => $data]);
   }
 
-  public function remove(int $id): RedirectResponse
+  public function delete(int $id): RedirectResponse
   {
     $permission = Permission::find($id);
 
