@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Outbox extends Model
 {
@@ -16,7 +17,12 @@ class Outbox extends Model
     "status",
   ];
 
-  public function phone()
+  /**
+   * Get the phone that owns the Outbox
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+   */
+  public function phone(): BelongsTo
   {
     return $this->belongsTo(Phone::class);
   }
