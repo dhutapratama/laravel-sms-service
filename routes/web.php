@@ -27,5 +27,5 @@ Route::middleware('auth')->group(function () {
   // Administrative area
   require __DIR__ . '/management/base.php';
   require __DIR__ . '/services/sms.php';
-  require __DIR__ . '/device/base.php';
+  require __DIR__ . '/services/phone.php';
 });
